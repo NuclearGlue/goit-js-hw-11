@@ -1,3 +1,9 @@
-function getImage() {
-    return fetch(`https://pixabay.com/api/${}`)
-}
+
+// const getImage = async () => {
+//     axios.get('pixabay.com/photos/animal-dog-mammal-canine-pet-snow-6800387/').then(
+//         response => {
+//             console.log(response);
+//         }
+//     )
+// }
+
