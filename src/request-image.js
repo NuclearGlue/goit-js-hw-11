@@ -6,14 +6,14 @@ const getImage = async (search, page) =>{
          page: page,
          per_page: 40,
             key: '24778461-5d71b0865fcbfdadabb130a0c',
-         q: `${ search }`,
+         q:  search ,
             image_type: 'photo',
             orientation: 'horizontal',
             safesearch: true,
   }})
     ;
-  console.log(search);
-  return imageList;
+  
+  return imageList.data;
 }
 
 export default { getImage };
