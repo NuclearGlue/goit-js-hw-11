@@ -23,3 +23,13 @@ body {
   margin-left: 50%;
   margin-right: 50%;
 }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -30px;
+  margin-bottom: -30px;
+  width: 1200px;
+}
+.photo-card {
+  flex-basis: calc((100% - 4 * 30px) / 4);
+}
