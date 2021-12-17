@@ -23,6 +23,24 @@ function imageSearch(event) {
             .then(renderImage)
         .catch(errorMsg);
     })
+
+    
+    
+    function renderImage(img) {
+    const image = imageCard(img.hits);
+        if (img.hits.length !==0) {
+
+           if (pageNumber === 1) {
+        galery.innerHTML = image;
+    }
+    else {
+        galery.innerHTML += image;
+        }
+   }
+        else {
+            Notify.failure("We're sorry, but you've reached the end of search results.")
+    }
+}
    
 }
 function errorMsg() {
@@ -30,7 +48,3 @@ function errorMsg() {
 };
 
 
-function renderImage(img) {
-    const image = imageCard(img.hits);
-    galery.innerHTML = image;
-}
