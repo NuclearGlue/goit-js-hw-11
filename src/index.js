@@ -12,18 +12,22 @@ function imageSearch(event) {
     event.preventDefault();
     const seekImg = searchValue.value;
     let pageNumber = 1;
+    
 
         API.getImage(seekImg, pageNumber)
-            .then(renderImage)
-        .catch(errorMsg);
-    
-    loadMore.addEventListener('click', () => {
+            .then(renderImage).then(
+                 loadMore.addEventListener('click', () => {
         pageNumber += 1
         API.getImage(seekImg, pageNumber)
             .then(renderImage)
         .catch(errorMsg);
     })
 
+        )
+            .then(loadMore.classList.remove('hidden'))
+        .catch(errorMsg);
+    
+   
     
     
     function renderImage(img) {
@@ -38,6 +42,7 @@ function imageSearch(event) {
         }
    }
         else {
+        loadMore.classList.add('hidden')
             Notify.failure("We're sorry, but you've reached the end of search results.")
     }
 }
